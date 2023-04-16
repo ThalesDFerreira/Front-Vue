@@ -1,25 +1,24 @@
 {
-  "env": {
-    "browser": true,
-    "es6": true,
-    "node": true
-  },
-  "parserOptions": {
-    "parser": "babel-eslint"
-  },
-  "extends": [
-    "airbnb-base",
-    "plugin:vue/recommended"
-  ],
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "paths": ["src"],
-        "extensions": [".js", ".jsx", ".ts", ".tsx", ".vue"]
-      }
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:vue/vue3-essential"
+    ],
+    "overrides": [
+    ],
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "modules": true
+         }
+    },
+    "plugins": [
+        "vue"
+    ],
+    "rules": {
     }
-  },
-  "rules": {
-    "vue/no-multiple-template-root": 0
-  }
 }
