@@ -8,7 +8,7 @@
 
 <script>
 import Banner from '../components/Banner.vue';
-import BurgerForm from '../../../backend-vue/BurgerForm.vue';
+import BurgerForm from '../components/BurgerForm.vue';
 
 export default {
   name: 'Home',
