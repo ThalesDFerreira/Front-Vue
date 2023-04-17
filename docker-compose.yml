@@ -1,13 +1,13 @@
 version: '3.9'
 services:
   frontend:
-    build: ./front-vue
+    build: ./frontend-vue
     ports:
       - 3000:3000
     platform: linux/x86_64
     working_dir: /app-frontend
   
   backend:
-    build: ./back-vue
+    build: ./backend-vue
     platform: linux/x86_64
     working_dir: /app-backend

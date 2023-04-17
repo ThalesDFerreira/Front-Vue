@@ -20,7 +20,7 @@ Tendo em vista que você já tenha o Docker instalado em sua máquina, execute o
 "docker-compose up -d"
 
 Após o processo finalizar, certifique-se que ocorreu tudo bem:
-"docker ps -a" OBS: verifique se existe os containers rodando"
+"docker ps -a" OBS: verifique se existe os containers rodando ex: front-vue-backend-1 e front-vue-frontend-1"
 
 Se ocorreu tudo bem, basta acessar do seu navegador de internet a porta "3000":
 "localhost:3000"
