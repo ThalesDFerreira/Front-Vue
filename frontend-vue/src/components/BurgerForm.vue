@@ -1,15 +1,13 @@
 <template>
+  <Message :msg="msg" v-show="msg" />
   <div>
-    <Message :msg="msg" v-show="msg" />
-  </div>
-  <div>
-    <form id="burger-form" @submit="createBurger">
+    <form id="burger-form" method="POST" @submit="createBurger">
       <div class="input-container">
-        <label for="nome">Nome do Cliente</label>
+        <label for="nome">Nome do cliente:</label>
         <input
           type="text"
           id="nome"
-          name="name"
+          name="nome"
           v-model="nome"
           placeholder="Digite o seu nome"
         />
@@ -38,7 +36,7 @@
         >
         <div
           class="checkbox-container"
-          v-for="opcional in opcionaisData"
+          v-for="opcional in opcionaisdata"
           :key="opcional.id"
         >
           <input
@@ -58,20 +56,19 @@
 </template>
 
 <script>
-import { setTimeout } from 'timers/promises';
-import Message from './Message.vue';
-
+import Message from './Message';
 export default {
-  name: 'BurguerForm',
+  name: 'BurgerForm',
   data() {
     return {
       paes: null,
       carnes: null,
-      opcionaisData: null,
+      opcionaisdata: null,
       nome: null,
       pao: null,
       carne: null,
       opcionais: [],
+      status: 'Solicitado',
       msg: null,
     };
   },
@@ -81,7 +78,7 @@ export default {
       const data = await req.json();
       this.paes = data.paes;
       this.carnes = data.carnes;
-      this.opcionaisData = data.opcionais;
+      this.opcionaisdata = data.opcionais;
     },
     async createBurger(e) {
       e.preventDefault();
@@ -103,14 +100,14 @@ export default {
       // Coloca mensagem no sistema
       this.msg = `Pedido N° ${res.id} realizado com sucesso`;
 
-      // Limpa a mensagem
+      // Limpa a mensagem no sistema
       setTimeout(() => (this.msg = ''), 3000);
 
-      // Limpa os campos do formulário
+      // Limpa os campos do formulário do sistema
       this.nome = '';
       this.carne = '';
       this.pao = '';
-      this.opcionais = '';
+      this.opcionais = [];
     },
   },
   mounted() {
@@ -127,13 +124,11 @@ export default {
   max-width: 400px;
   margin: 0 auto;
 }
-
 .input-container {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
 }
-
 label {
   font-weight: bold;
   margin-bottom: 15px;
@@ -141,39 +136,32 @@ label {
   padding: 5px 10px;
   border-left: 4px solid #fcba03;
 }
-
 input,
 select {
   padding: 5px 10px;
   width: 300px;
 }
-
 #opcionais-container {
   flex-direction: row;
   flex-wrap: wrap;
 }
-
 #opcionais-title {
   width: 100%;
 }
-
 .checkbox-container {
   display: flex;
   align-items: flex-start;
   width: 50%;
   margin-bottom: 20px;
 }
-
 .checkbox-container span,
 .checkbox-container input {
   width: auto;
 }
-
 .checkbox-container span {
   margin-left: 6px;
   font-weight: bold;
 }
-
 .submit-btn {
   background-color: #222;
   color: #fcba03;
@@ -185,7 +173,6 @@ select {
   cursor: pointer;
   transition: 0.5s;
 }
-
 .submit-btn:hover {
   background-color: transparent;
   color: #222;
