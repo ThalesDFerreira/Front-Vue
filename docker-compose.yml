@@ -6,3 +6,7 @@ services:
       - 3000:3000
     platform: linux/x86_64
     working_dir: /app-frontend
+  
+  backend:
+    platform: linux/x86_64
+    working_dir: /app-backend
