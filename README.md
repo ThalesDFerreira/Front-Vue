@@ -14,16 +14,17 @@ Clone o repositório (sem as aspas):
 https ==> "git clone https://github.com/ThalesDFerreira/Front-Vue.git" ou SSH ==> "git clone git@github.com:ThalesDFerreira/Front-Vue.git"
 
 Entre no diretório clonado:
-"cd Front-Vue"
+"cd Front-Vue && cd frontend-vue"
 
-Tendo em vista que você já tenha o Docker instalado em sua máquina, execute o seguinte comando para subir a aplicação (container):
-"docker-compose up -d"
+Tendo em vista que você já tenha o Node instalado em sua máquina, execute o seguinte comando para instalar as dependencias do projeto:
+"npm install"
 
-Após o processo finalizar, certifique-se que ocorreu tudo bem:
-"docker ps -a" OBS: verifique se existe os containers rodando ex: front-vue-backend-1 e front-vue-frontend-1"
+Após o processo finalizar, inicialize o banco de dados fake com o seguinte comando:
+"npm run backend"
+OBS: deixe aberto esse terminal
 
-Se ocorreu tudo bem, basta acessar do seu navegador de internet a porta "3000":
-"localhost:3000"
+Em um novo terminal e dentro do diretório "frontend-vue" inicialize a aplicação com o seguinte comando:
+"npm run serve"
 
-Após realizar as devidas avaliações e visualizações digite o comando no seu terminal para baixar a aplicação docker (container):
-"docker-compose down"
+Após, entrar no navegador de internet e na barra de endereço colocar o comando abaixo para vizualizar a aplicação:
+"http://localhost:8080/"
