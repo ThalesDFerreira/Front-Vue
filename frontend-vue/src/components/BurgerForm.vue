@@ -89,7 +89,7 @@ export default {
         nome: this.nome,
         carne: this.carne,
         pao: this.pao,
-        opcionais: Array.drom(this.opcionais),
+        opcionais: Array.from(this.opcionais),
         status: 'Solicitado',
       };
       const dataJson = JSON.stringify(data);
@@ -127,11 +127,13 @@ export default {
   max-width: 400px;
   margin: 0 auto;
 }
+
 .input-container {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
 }
+
 label {
   font-weight: bold;
   margin-bottom: 15px;
@@ -139,32 +141,39 @@ label {
   padding: 5px 10px;
   border-left: 4px solid #fcba03;
 }
+
 input,
 select {
   padding: 5px 10px;
   width: 300px;
 }
+
 #opcionais-container {
   flex-direction: row;
   flex-wrap: wrap;
 }
+
 #opcionais-title {
   width: 100%;
 }
+
 .checkbox-container {
   display: flex;
   align-items: flex-start;
   width: 50%;
   margin-bottom: 20px;
 }
+
 .checkbox-container span,
 .checkbox-container input {
   width: auto;
 }
+
 .checkbox-container span {
   margin-left: 6px;
   font-weight: bold;
 }
+
 .submit-btn {
   background-color: #222;
   color: #fcba03;
@@ -176,6 +185,7 @@ select {
   cursor: pointer;
   transition: 0.5s;
 }
+
 .submit-btn:hover {
   background-color: transparent;
   color: #222;
