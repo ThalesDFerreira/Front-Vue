@@ -2,7 +2,7 @@ Projeto Frent-End com VUE
 
 Descrição
 
-O Projeto Frent-End com VUE é uma aplicação web direcionada para pedidos em restaurantes, sendo que no exemplo fora feito para realizar pedidos de diferentes Burgers.
+O Projeto Front-End com VUE é uma aplicação web direcionada para pedidos em restaurantes, sendo que no exemplo fora feito para realizar pedidos de diferentes Burgers.
 
 Tecnologias utilizadas
 
